@@ -17,15 +17,19 @@ This project shows a end-to-end application deployment in the cloud, mimicking m
 ---
 
 ## ☁️ Architecture
+ The application serves a to-do list via Flask on App Engine, storing tasks in a Cloud SQL MySQL database.
 
-**Architecture Diagram:**  
+![Architecture Diagram](todo-app-architecture.png)
+
+- **User**: Sends HTTP requests to add/view tasks via browser.
+- **App Engine**: Hosts Flask app, handling requests and rendering UI.
+- **Cloud SQL**: Stores tasks in MySQL, connected via Unix socket.
 
 
 **Components:**
 | Layer | Services / Tools | Description |
 |-------|------------------|-------------|
-| Layer                      | Services / Tools                                      | Description                                                        |
-| -------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------ |
+| Layer                      | Services / Tools                                      | Description                                      
 | **Compute**                | **Google App Engine**, **Gunicorn**, **Flask**        | Web application hosting and runtime environment for the Python app |
 | **Database**               | **Cloud SQL (MySQL)**                                 | Managed relational database for persistent data storage            |
 | **Application Code**       | **Python**, **Flask Framework**                       | Backend logic and API endpoints for the web app                    |
